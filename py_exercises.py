@@ -1,30 +1,81 @@
-while True:
-    room_length = input("Please enter the room's length in feet:\n")
-    room_width = input("Please enter the room's width in feet:\n")
+####################   Ex01 ##########################
+def ex_un():
+    while True:
+        try:
+            x = float(input("PLease enter the first number : "))
+            y = float(input("Please enter the second number : "))
+        except ValueError:
+            print("You should enter a numerical value !!")
+        break
 
-    try:
-        room_length = float(room_length)
-        room_width = float(room_width)
-    except ValueError:
-        print("You should enter a valid number.")
-        continue  # Loop again if there's a ValueError
+    equation_operator = input("Please enter the operator '+, - , * , / ,^ , % ' : ")
 
-    if room_length <= 0 or room_width <= 0:
-        print("Please enter valid positive values for both dimensions.")
-        continue  # Loop again if either dimension is non-positive
+    if x.is_integer():
+        x = round(x)
+    if y.is_integer():
+        y = round(y)
 
-    # If input is valid, break the loop
-    break
+    if equation_operator == '*':
+        result = x * y
+    elif equation_operator == '/':
+        result = x / y
+    elif equation_operator == '^':
+        result = x ** y
+    elif equation_operator == '+':
+        result = x + y
+    elif equation_operator == '-':
+        result = x - y
+    elif equation_operator =='%':
+        result =x % y
+    else:
+        print("Please enter a operator '+, - , * , / ,^ , % '")
 
-# VARIABLES AND CONSTANTS
-CONVERSION_FACTOR = 0.092903
-square_feet_area = room_length * room_width
-square_meters_area = square_feet_area * CONVERSION_FACTOR
-# END VARIABLES AND CONSTANTS
+    print(f"The result of the {x} {equation_operator} {y} is : {result}")
 
-# AVOIDING THE FLOATING NUMBER
-square_meters_area = round(square_meters_area, 2)
-square_feet_area = round(square_feet_area, 2)
+####################### Ex02 ##########################
 
-print(f"The surface area of the room in square feet is: {square_feet_area}")
-print(f"The surface area of the room in square meters is: {square_meters_area}")
+def sum_in_range(start,end):
+    """this function will calculate the sum of all the elements in  a specific range """
+    if end >start :
+        sum_inc=0
+        for i in range(start,end+1):
+            sum_inc=sum_inc+i
+
+    if end <start :
+        sum_inc=0
+        for i in range(end,start+1):
+            sum_inc=sum_inc+i
+
+    print(f"The sum of the elements of the range [{start} ,{end}] is :{sum_inc}")
+
+sum_in_range(4,-1)
+
+#################### Exo3 #############################
+
+numbers=[3,5,83,23,11,00,0.12,15,25,149.99,187,210,838,9,1]
+def exo_3(numbers):
+    for number in numbers :
+        if number > 500 :
+            break
+        if number % 5 ==0 and number <=150 :
+            print(number)
+
+exo_3(numbers)
+
+################### Exo4 ##############################
+
+numbers_one=[5,10,15,20,25,30,35,40,45]
+def reversing_list(numbers_list):
+    for number in range(-1,-(len(numbers_list)+1),-1):
+        print(numbers_list[number])
+
+################### Exo5 ##############################
+
+def factorial(number):
+    fac=1
+    for nmb in range(number,0,-1):
+        fac=nmb*fac
+    print(fac)
+
+################### Exo6 ##############################
+
