@@ -122,3 +122,6 @@ def odd_even_checker():
 
     print(f"\nThe odd numbers are : {odd_list}\n")
     print(f"The even numbers are : {even_list}")
+
+#######################################################################################################################
+                            ######Serie 02(fonctions)##########
